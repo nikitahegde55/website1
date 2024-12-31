@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrients, Pesticides, and Biostimulants</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('images/logo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            padding: 100px 90px;
+            box-sizing: border-box;
+            
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: 700;
+            color: #32cd32;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            color: #f0f0f0;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .tabs {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 50px 50px;
+            border-radius: 15px;
+            font-size: 25px;;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .tab-titles {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            padding: 25px 25px;
+            list-style: none;
+        }
+
+        .tab-titles li a {
+            padding: 10px 20px;
+            background-color: rgba(34, 139, 34, 0.8);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .tab-titles li a:hover {
+            background-color: rgba(34, 139, 34, 1);
+            transform: translateY(-3px);
+            padding: 25px 25px;
+        }
+
+        .tab-titles li a:active {
+            background-color: rgba(34, 139, 34, 0.7);
+            transform: translateY(0);
+        }
+
+        .tab-content {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border-radius: 10px;
+            padding: 25px 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .next-button {
+            margin-top: 40px;
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(34, 139, 34, 0.8);
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .next-button:hover {
+            background-color: rgba(34, 139, 34, 1);
+            transform: translateY(-3px);
+        }
+
+        .next-button:active {
+            background-color: rgba(34, 139, 34, 0.7);
+            transform: translateY(0);
+        }
+
+        .next-button .arrow-icon {
+            font-size: 1.5em;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nutrients, Pesticides & Biostimulants</h1>
+        <p class="tagline">Key Components for Modern Agriculture</p>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <ul class="tab-titles">
+                <li><a href="nutrients.html">Nutrients</a></li>
+
+                <li><a href="#pesticides" class="tab-link">Pesticides</a></li>
+                <li><a href="biostimulants.html">Biostimulants</a></li>
+            </ul>
+
+            <!-- Tab Contents -->
+            <div id="nutrients" class="tab-content">
+                <h2>Primary Nutrients</h2>
+                <p>Primary nutrients include nitrogen, phosphorus, and potassium, which are essential for plant growth and development.</p>
+
+                <h2>Secondary Nutrients</h2>
+                <p>Secondary nutrients like magnesium, calcium, and sulfur play a supportive role in improving soil and plant health.</p>
+            </div>
+
+            <div id="pesticides" class="tab-content">
+                <h2>Herbicides</h2>
+                <p>Herbicides control unwanted weeds that compete with crops for nutrients and water.</p>
+
+                <h2>Insecticides</h2>
+                <p>Insecticides help manage harmful insects, protecting crops from damage and improving yields.</p>
+
+                <h2>Fungicides</h2>
+                <p>Fungicides prevent and treat fungal infections, ensuring healthier plants and higher productivity.</p>
+            </div>
+
+            <div id="biostimulants" class="tab-content">
+                <h2>Plant Growth Regulators</h2>
+                <p>Plant growth regulators enhance the efficiency of nutrient use and promote root and shoot development.</p>
+
+                <h2>Microbial Inoculants</h2>
+                <p>Microbial inoculants improve nutrient uptake, soil health, and resistance to stress conditions.</p>
+            </div>
+        </div>
+
+        <!-- Navigation Button -->
+        <a href="index.html" class="next-button">
+            Back to Home <span class="arrow-icon">&#8592;</span>
+        </a>
+    </div>
+
+    <script>
+        // Handle tab switching logic
+        const tabs = document.querySelectorAll('.tab-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function (e) {
+                // Check if the href leads to an external page
+                if (this.getAttribute('href') === 'nutrients.html') {
+                    return; // Allow the default link behavior
+                }
+                e.preventDefault();
+        
+                // Hide all tab contents
+                tabContents.forEach(content => content.classList.remove('active'));
+        
+                // Show the content related to the clicked tab
+                const target = document.querySelector(tab.getAttribute('href'));
+                if (target) target.classList.add('active');
+            });
+        });
+        
+    </script>
+    <iframe src="chatbot/chatbot.html" width="320" height="480" style="border:none; position: fixed; bottom: 70px; right: 20px; z-index: 1000;"></iframe>
+</body>
+</html>
